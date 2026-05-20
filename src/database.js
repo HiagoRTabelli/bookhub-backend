@@ -5,10 +5,11 @@ async function connectDatabase() {
         console.log("Trying to connect to MongoDB...")
 
         await mongoose.connect(process.env.MONGO_URI, {
+            dbName: "bookhub",
             serverSelectionTimeoutMS: 60000,
         })
 
-        console.log("MongoDB connected")
+        console.log("MongoDB connected to bookhub")
     } catch (error) {
         console.error("MongoDB connection error:", error.message)
     }
